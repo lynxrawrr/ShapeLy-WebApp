@@ -1,0 +1,135 @@
+@use "./tokens.scss" as *;
+
+/* Base */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-app);
+  color: var(--fg-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased; /* Font lebih tajam */
+}
+
+/* Helpers */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: var(--radius-md);
+  padding: 0 20px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btnPrimary {
+  background: var(--fg-primary);
+  color: #fff;
+
+  &:hover {
+    background: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--fg-primary);
+  border: 1px solid var(--border-medium);
+
+  &:hover {
+    border-color: var(--fg-primary);
+    background: var(--bg-panel);
+  }
+}
+
+/* Info label (3D annotation) */
+.info-label {
+  position: absolute;
+  background: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(4px);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  pointer-events: none;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.info-label::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.info-label::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+/* Reset */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Scroll lock untuk useBodyScrollLock.js */
+
+body.noScroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  position: fixed; 
+  width: 100%;
+}

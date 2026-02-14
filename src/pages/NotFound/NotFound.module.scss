@@ -1,0 +1,159 @@
+/* Layout */
+.container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.contentWrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+}
+
+/* Text */
+.label {
+  display: inline-block;
+  font-weight: 700;
+  color: #ff5a5f;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  background: rgba(255, 90, 95, 0.1);
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+
+  .highlight {
+    color: #888;
+  }
+}
+
+.desc {
+  font-size: 1.125rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+
+  @media (max-width: 960px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btnPrimary {
+  background-color: #000;
+  color: #fff;
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: #222;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btnOutline {
+  background-color: transparent;
+  border: 2px solid #eee;
+  color: #111;
+
+  &:hover {
+    border-color: #000;
+    background-color: #fff;
+  }
+}
+
+.simpleBack {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
+/* Visual */
+.visualSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @media (max-width: 960px) {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+}
+
+.image404 {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
