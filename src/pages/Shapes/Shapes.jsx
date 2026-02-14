@@ -46,7 +46,7 @@ export default function Shapes() {
 
             return (
               <motion.div key={x.key} variants={item} className={s.cardWrapper}>
-                <Link to={`/shape/${x.key}`} className={s.card}>
+                <Link to={`/shape/${x.key}`} className={s.card} onClick={() => window.scrollTo(0, 0)}>
                   <div className={s.cardTop}>
                     <div className={s.iconWrap}>
                       <Icon size={24} />

@@ -95,7 +95,7 @@ export default function Home() {
             <div className={styles.blob}></div>
             <img
               src={heroImg}
-              alt="Solidify Dashboard Preview"
+              alt="ShapeLy Dashboard Preview"
               className={styles.heroImg}
               loading="eager"
             />
