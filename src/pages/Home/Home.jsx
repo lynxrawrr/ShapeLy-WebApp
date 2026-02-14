@@ -73,7 +73,7 @@ export default function Home() {
             />
             <MetaCard
               icon={<FiLayers />}
-              title="Jaring jaring"
+              title="Jaring - Jaring"
               desc="Animasi buka dan tutup"
             />
             <MetaCard
