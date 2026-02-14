@@ -12,7 +12,20 @@ body {
   background: var(--bg-app);
   color: var(--fg-primary);
   font-family: var(--font-main);
-  -webkit-font-smoothing: antialiased; /* Font lebih tajam */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+textarea {
+  font-family: var(--font-main);
 }
 
 /* Helpers */
@@ -121,7 +134,9 @@ body {
 
 /* Reset */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -130,6 +145,6 @@ body {
 body.noScroll {
   overflow: hidden !important;
   height: 100vh !important;
-  position: fixed; 
+  position: fixed;
   width: 100%;
 }
