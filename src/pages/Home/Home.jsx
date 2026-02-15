@@ -178,7 +178,7 @@ export default function Home() {
           <Step
             n="04"
             title="Hitung dan Coba"
-            desc="Masukkan angka untuk melihat hasil luas dan volume secara langsung.."
+            desc="Ubah ukuran, lalu hasil luas dan volume akan menyesuaikan otomatis."
           />
         </div>
       </section>
